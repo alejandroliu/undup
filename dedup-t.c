@@ -199,6 +199,6 @@ TEST(dedup_undup1) {
 // Comment out this test, but...
 #ifdef __GLIBC__
   m2 = mallinfo();
-  //~ assertEquals(m1.uordblks,m2.uordblks);
+  assertEquals(m1.uordblks,m2.uordblks);
 #endif
 }
