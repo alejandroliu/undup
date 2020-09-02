@@ -87,7 +87,7 @@ static int cmplines(const void *p1, const void *p2) {
   }
   return l1->count - l2->count;
 }
-  
+
 
 static void do_dedup(struct fs_dat *fs,ino_t *inos,int icnt,struct stat *stp,void *ext) {
   char **fpt;
@@ -198,6 +198,8 @@ TEST(dedup_undup1) {
 
 #ifdef __GLIBC__
   m2 = mallinfo();
+  printf("m1.uordblks=%ul\n", m1.uordblks);
+  printf("m2.uordblks=%ul\n", m2.uordblks);
   assertEquals(m1.uordblks,m2.uordblks);
 #endif
 }
