@@ -197,8 +197,8 @@ TEST(dedup_undup1) {
   rm_rf(base);
 
 // Comment out this test, but...
-//~ #ifdef __GLIBC__
-  //~ m2 = mallinfo();
+#ifdef __GLIBC__
+  m2 = mallinfo();
   //~ assertEquals(m1.uordblks,m2.uordblks);
-//~ #endif
+#endif
 }
